@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# stock-photos
+
+Quality Stock Images app built with React, create-react-app, react-router, material-ui and axios.
 
 ## Available Scripts
 
