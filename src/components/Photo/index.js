@@ -4,14 +4,14 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 
-const Photo = ({ src, title }) => {
+const Photo = ({ src, title, height }) => {
   return (
     <Card>
       <CardActionArea>
         <CardMedia
           component="img"
           alt={title}
-          height="140"
+          height={height}
           image={src}
           title={title}
         />
@@ -23,11 +23,13 @@ const Photo = ({ src, title }) => {
 Photo.defaultProps = {
   src: 'https://via.placeholder.com/600/1ee8a4',
   title: 'nihil at amet non hic quia qui',
+  height: 200,
 };
 
 Photo.propTypes = {
   src: PropTypes.string,
   title: PropTypes.string,
+  height: PropTypes.number,
 };
 
 export default Photo;
