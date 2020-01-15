@@ -2,16 +2,13 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Link from '@material-ui/core/Link';
+import Backdrop from '@material-ui/core/Backdrop';
+import Alert from '@material-ui/lab/Alert';
 
-import Photo from 'components/Photo';
+import CategoryList from 'components/CategoryList';
 import useCategoriesApi from 'api/categoriesAPI';
-import { THUMB_SIZE, IMG_THUMB } from 'constants/paths';
-import { useStyles } from './styles.js';
+import { useStyles } from './styles';
 
 const App = () => {
   const { categories, isloading, isError } = useCategoriesApi();
@@ -19,47 +16,19 @@ const App = () => {
 
   return (
     <Container maxWidth="lg" className={classes.root}>
+      <Backdrop open={isloading} className={classes.backdrop}>
+        {isloading && <CircularProgress size={68} color="inherit" />}
+      </Backdrop>
       <Box mx="10px" py="20px">
+        <Typography color="textPrimary" component="h1" className={classes.h1}>
+          Popular Categories
+        </Typography>
         {isError && (
-          <Typography color="textPrimary">
-            Something went wrong, please try again.
-          </Typography>
+          <Alert severity="error">
+            Something went wrong, please try again!
+          </Alert>
         )}
-        {isloading ? (
-          <CircularProgress />
-        ) : (
-          <>
-            <Typography
-              color="textPrimary"
-              component="h1"
-              className={classes.h1}
-            >
-              Popular Categories
-            </Typography>
-            <GridList cellHeight={THUMB_SIZE} cols={4}>
-              {categories.map(category => (
-                <GridListTile key={category.img_id} cols={1}>
-                  <Link
-                    underline="none"
-                    href={`${IMG_THUMB}/${category.img_id}.jpg`}
-                    target="_blank"
-                  >
-                    <Photo
-                      src={`${IMG_THUMB}/${category.img_id}.jpg`}
-                      title={category.label}
-                      height={THUMB_SIZE}
-                    />
-                    <GridListTileBar
-                      title={category.label}
-                      className={classes.titleBar}
-                      titlePosition="top"
-                    />
-                  </Link>
-                </GridListTile>
-              ))}
-            </GridList>
-          </>
-        )}
+        <CategoryList categories={categories} />
       </Box>
     </Container>
   );
