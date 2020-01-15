@@ -6,7 +6,7 @@ const useCategoriesApi = () => {
   const [isloading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
-  const fetchCategories = async id => {
+  const fetchCategories = async () => {
     setIsError(false);
     setIsLoading(true);
 
@@ -27,7 +27,7 @@ const useCategoriesApi = () => {
     fetchCategories();
   }, []);
 
-  return { categories, isloading, isError, setCategories };
+  return [categories, isloading, isError];
 };
 
 export default useCategoriesApi;

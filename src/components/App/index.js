@@ -1,36 +1,15 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import Typography from '@material-ui/core/Typography';
+import React, { Suspense } from 'react';
+import { HashRouter } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import Backdrop from '@material-ui/core/Backdrop';
-import Alert from '@material-ui/lab/Alert';
-
-import CategoryList from 'components/CategoryList';
-import useCategoriesApi from 'api/categoriesAPI';
-import { useStyles } from './styles';
+import Routes from 'routes';
 
 const App = () => {
-  const { categories, isloading, isError } = useCategoriesApi();
-  const classes = useStyles();
-
   return (
-    <Container maxWidth="lg" className={classes.root}>
-      <Backdrop open={isloading} className={classes.backdrop}>
-        {isloading && <CircularProgress size={68} color="inherit" />}
-      </Backdrop>
-      <Box mx="10px" py="20px">
-        <Typography color="textPrimary" component="h1" className={classes.h1}>
-          Popular Categories
-        </Typography>
-        {isError && (
-          <Alert severity="error">
-            Something went wrong, please try again!
-          </Alert>
-        )}
-        <CategoryList categories={categories} />
-      </Box>
-    </Container>
+    <HashRouter>
+      <Suspense fallback={<CircularProgress />}>
+        <Routes />
+      </Suspense>
+    </HashRouter>
   );
 };
 

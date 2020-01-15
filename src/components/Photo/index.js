@@ -23,13 +23,13 @@ const Photo = ({ src, title, height }) => {
 Photo.defaultProps = {
   src: 'https://via.placeholder.com/600/1ee8a4',
   title: 'nihil at amet non hic quia qui',
-  height: 200,
+  height: 'auto',
 };
 
 Photo.propTypes = {
   src: PropTypes.string,
   title: PropTypes.string,
-  height: PropTypes.number,
+  height: PropTypes.string,
 };
 
 export default Photo;

@@ -9,23 +9,23 @@ import Photo from 'components/Photo';
 import { THUMB_SIZE, IMG_THUMB } from 'constants/paths';
 import { useStyles } from './styles';
 
-const CategoryList = ({ categories }) => {
+const PhotoList = ({ photos }) => {
   const classes = useStyles();
 
   return (
     <>
       <GridList cellHeight={THUMB_SIZE} cols={4}>
-        {categories.map(category => (
-          <GridListTile key={category.img_id} cols={1} className={classes.tile}>
-            <Link underline="none" href={`#/category/${category.label}`}>
+        {photos.map(photo => (
+          <GridListTile key={photo.img_id} cols={1} className={classes.tile}>
+            <Link underline="none" href={`#/photo/${photo.img_id}`}>
               <Photo
-                src={`${IMG_THUMB}/${category.img_id}.jpg`}
-                title={category.label}
+                src={`${IMG_THUMB}/${photo.img_id}.jpg`}
+                title={photo.tags}
                 height={THUMB_SIZE.toString()}
               />
               <GridListTileBar
-                title={category.label}
-                titlePosition="top"
+                title={photo.tags}
+                titlePosition="bottom"
                 className={classes.titleBar}
               />
             </Link>
@@ -36,8 +36,8 @@ const CategoryList = ({ categories }) => {
   );
 };
 
-CategoryList.propTypes = {
-  categories: PropTypes.array,
+PhotoList.propTypes = {
+  photos: PropTypes.array,
 };
 
-export default CategoryList;
+export default PhotoList;
