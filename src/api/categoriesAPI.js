@@ -3,12 +3,12 @@ import { CATEGORIES_URL } from './config';
 
 const useCategoriesApi = () => {
   const [categories, setCategories] = useState([]);
-  const [isloading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
   const fetchCategories = async () => {
-    setIsError(false);
     setIsLoading(true);
+    setIsError(false);
 
     try {
       const response = await fetch(CATEGORIES_URL);
@@ -27,7 +27,7 @@ const useCategoriesApi = () => {
     fetchCategories();
   }, []);
 
-  return [categories, isloading, isError];
+  return [categories, isLoading, isError];
 };
 
 export default useCategoriesApi;

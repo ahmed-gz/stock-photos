@@ -37,7 +37,7 @@ const CategoryPhotos = ({ match, history }) => {
           size="large"
           color="secondary"
           onClick={reLoad}
-          disabled={isloading || currentPage === 1}
+          disabled={isLoading || currentPage === 1}
         >
           ReLoad
         </Button>

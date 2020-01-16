@@ -11,13 +11,13 @@ import useCategoriesApi from 'api/categoriesAPI';
 import { useStyles } from './styles';
 
 const MainPage = () => {
-  const [categories, isloading, isError] = useCategoriesApi();
+  const [categories, isLoading, isError] = useCategoriesApi();
   const classes = useStyles();
 
   return (
     <Container maxWidth="lg" className={classes.root}>
-      <Backdrop open={isloading} className={classes.backdrop}>
-        {isloading && <CircularProgress size={68} color="inherit" />}
+      <Backdrop open={isLoading} className={classes.backdrop}>
+        {isLoading && <CircularProgress size={68} color="inherit" />}
       </Backdrop>
       <Box mx="10px" py="20px">
         <Typography color="textPrimary" component="h1" className={classes.h1}>
