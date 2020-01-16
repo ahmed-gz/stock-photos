@@ -3,9 +3,9 @@ import { PHOTOS_URL } from './config';
 
 const usePhotosApi = (
   category,
+  page = 1,
   sorting = 'trending',
   sortingBy = 'asc',
-  page = 1,
 ) => {
   const [photos, setPhotos] = useState([]);
   const [isloading, setIsLoading] = useState(true);
@@ -22,7 +22,9 @@ const usePhotosApi = (
         );
         const json = await response.json();
 
-        setPhotos(json.results);
+        page === 1
+          ? setPhotos([...json.results])
+          : setPhotos([...photos, ...json.results]);
       } catch (e) {
         console.log('Error: ', e);
         setIsError(true);

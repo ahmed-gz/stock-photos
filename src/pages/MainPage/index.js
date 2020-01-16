@@ -13,7 +13,6 @@ import { useStyles } from './styles';
 const MainPage = () => {
   const [categories, isloading, isError] = useCategoriesApi();
   const classes = useStyles();
-  console.log('MainPage');
 
   return (
     <Container maxWidth="lg" className={classes.root}>
