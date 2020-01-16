@@ -9,8 +9,4 @@ export const useStyles = makeStyles(theme => ({
     fontSize: '2rem',
     textTransform: 'capitalize',
   },
-  backdrop: {
-    zIndex: theme.zIndex.drawer + 1,
-    color: '#fff',
-  },
 }));

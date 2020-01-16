@@ -10,6 +10,7 @@ const usePhotosApi = (
   const [photos, setPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [nextPage, setNextPage] = useState(page + 1);
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -22,6 +23,7 @@ const usePhotosApi = (
         );
         const json = await response.json();
 
+        setNextPage(json.nextPage);
         page === 1
           ? setPhotos([...json.results])
           : setPhotos([...photos, ...json.results]);
@@ -36,7 +38,7 @@ const usePhotosApi = (
     fetchPhotos();
   }, [category, sorting, sortingBy, page]);
 
-  return [photos, isLoading, isError];
+  return [photos, isLoading, isError, nextPage];
 };
 
 export default usePhotosApi;
