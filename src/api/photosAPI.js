@@ -23,10 +23,11 @@ const usePhotosApi = (
         );
         const json = await response.json();
 
-        setNextPage(json.nextPage);
         page === 1
           ? setPhotos([...json.results])
-          : setPhotos([...photos, ...json.results]);
+          : setPhotos(photos => [...photos, ...json.results]);
+
+        setNextPage(json.nextPage);
       } catch (e) {
         console.log('Error: ', e);
         setIsError(true);
