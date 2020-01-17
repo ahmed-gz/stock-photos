@@ -17,9 +17,18 @@ export const useStyles = makeStyles(theme => ({
     },
   },
   titleBar: {
-    borderRadius: '4px 4px 0 0',
+    borderRadius: '0 0 4px 4px',
     background:
       'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
       'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+  },
+  skeleton: {
+    borderRadius: '4px',
+  },
+  textSkeleton: {
+    bottom: '65px',
+    margin: '5px',
+    zIndex: theme.zIndex.drawer + 1,
+    backgroundColor: theme.palette.common.white,
   },
 }));

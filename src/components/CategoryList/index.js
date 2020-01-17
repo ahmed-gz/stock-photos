@@ -14,7 +14,7 @@ const CategoryList = ({ categories }) => {
 
   return (
     <>
-      <GridList cellHeight={THUMB_SIZE} cols={4}>
+      <GridList cellHeight={THUMB_SIZE + 15} cols={4}>
         {categories.map(category => (
           <GridListTile key={category.img_id} cols={1} className={classes.tile}>
             <Link underline="none" href={`#/category/${category.label}`}>

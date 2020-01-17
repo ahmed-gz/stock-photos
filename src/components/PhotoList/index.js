@@ -20,14 +20,13 @@ const PhotoList = ({ photos, perPage, isReloading, isLoading }) => {
 
   return (
     <>
-      <GridList cellHeight={THUMB_SIZE} cols={4}>
+      <GridList cellHeight={THUMB_SIZE + 15} cols={4}>
         {data.map((photo, key) => (
           <GridListTile key={key} cols={1} className={classes.tile}>
             {photo ? (
               <Link underline="none" href={`#/photo/${photo.img_id}`}>
                 <Photo
                   src={`${IMG_THUMB}/${photo.img_id}.jpg`}
-                  isLoading={isLoading}
                   title={photo.tags}
                   height={THUMB_SIZE.toString()}
                 />
@@ -43,8 +42,13 @@ const PhotoList = ({ photos, perPage, isReloading, isLoading }) => {
                   variant="rect"
                   animation="wave"
                   height={Number(THUMB_SIZE)}
+                  className={classes.skeleton}
                 />
-                <Skeleton animation="wave" />
+                <Skeleton
+                  animation="wave"
+                  height={48}
+                  className={classes.textSkeleton}
+                />
               </>
             )}
           </GridListTile>
