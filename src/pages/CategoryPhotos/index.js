@@ -5,9 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import Alert from '@material-ui/lab/Alert';
 import Button from '@material-ui/core/Button';
 
+import PhotoList from 'components/PhotoList';
 import usePhotosApi from 'api/photosAPI';
 import { useInfiniteScroll } from 'util/hooks';
-import PhotoList from 'components/PhotoList';
 import { useStyles } from './styles';
 
 const CategoryPhotos = ({ match, history }) => {

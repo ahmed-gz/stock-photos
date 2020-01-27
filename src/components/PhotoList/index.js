@@ -19,42 +19,40 @@ const PhotoList = ({ photos, perPage, isReloading, isLoading }) => {
     : photos;
 
   return (
-    <>
-      <GridList cellHeight={THUMB_SIZE + 15} cols={4}>
-        {data.map((photo, key) => (
-          <GridListTile key={key} cols={1} className={classes.tile}>
-            {photo ? (
-              <Link underline="none" href={`#/photo/${photo.img_id}`}>
-                <Photo
-                  src={`${IMG_THUMB}/${photo.img_id}.jpg`}
-                  title={photo.tags}
-                  height={THUMB_SIZE.toString()}
-                />
-                <GridListTileBar
-                  title={photo.tags}
-                  titlePosition="bottom"
-                  className={classes.titleBar}
-                />
-              </Link>
-            ) : (
-              <>
-                <Skeleton
-                  variant="rect"
-                  animation="wave"
-                  height={Number(THUMB_SIZE)}
-                  className={classes.skeleton}
-                />
-                <Skeleton
-                  animation="wave"
-                  height={48}
-                  className={classes.textSkeleton}
-                />
-              </>
-            )}
-          </GridListTile>
-        ))}
-      </GridList>
-    </>
+    <GridList cellHeight={THUMB_SIZE + 15} cols={4}>
+      {data.map((photo, key) => (
+        <GridListTile key={key} cols={1} className={classes.tile}>
+          {photo ? (
+            <Link underline="none" href={`#/photo/${photo.img_id}`}>
+              <Photo
+                src={`${IMG_THUMB}/${photo.img_id}.jpg`}
+                title={photo.tags}
+                height={THUMB_SIZE.toString()}
+              />
+              <GridListTileBar
+                title={photo.tags}
+                titlePosition="bottom"
+                className={classes.titleBar}
+              />
+            </Link>
+          ) : (
+            <>
+              <Skeleton
+                variant="rect"
+                animation="wave"
+                height={Number(THUMB_SIZE)}
+                className={classes.skeleton}
+              />
+              <Skeleton
+                animation="wave"
+                height={48}
+                className={classes.textSkeleton}
+              />
+            </>
+          )}
+        </GridListTile>
+      ))}
+    </GridList>
   );
 };
 
