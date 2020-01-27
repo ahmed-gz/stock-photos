@@ -3,17 +3,17 @@ import { PHOTOS_URL } from './config';
 
 const usePhotosApi = (
   category,
-  page = 1,
+  currentPage = 1,
   sorting = 'trending',
   sortingBy = 'asc',
 ) => {
   const [photos, setPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [nextPage, setNextPage] = useState(page + 1);
+  const [nextPage, setNextPage] = useState(currentPage + 1);
 
   useEffect(() => {
-    const fetchPhotos = async () => {
+    const fetchPhotos = async page => {
       setIsLoading(true);
       setIsError(false);
 
@@ -36,8 +36,8 @@ const usePhotosApi = (
       }
     };
 
-    fetchPhotos();
-  }, [category, sorting, sortingBy, page]);
+    fetchPhotos(currentPage);
+  }, [category, sorting, sortingBy, currentPage]);
 
   return [photos, isLoading, isError, nextPage];
 };
