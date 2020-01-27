@@ -6,6 +6,7 @@ import Alert from '@material-ui/lab/Alert';
 import Button from '@material-ui/core/Button';
 
 import PhotoList from 'components/PhotoList';
+import Breadcrumbs from 'components/Breadcrumbs';
 import usePhotosApi from 'api/photosAPI';
 import { useInfiniteScroll } from 'util/hooks';
 import { useStyles } from './styles';
@@ -31,6 +32,7 @@ const CategoryPhotos = ({ match, history }) => {
   return (
     <Container maxWidth="lg" className={classes.root}>
       <Box mx="10px" py="20px">
+        <Breadcrumbs category={currentCategory} />
         <Typography color="textPrimary" component="h1" className={classes.h1}>
           {currentCategory} Photos
         </Typography>
