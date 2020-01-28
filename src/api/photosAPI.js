@@ -33,6 +33,7 @@ const usePhotosApi = (
         setIsError(true);
       } finally {
         setIsLoading(false);
+        window.dispatchEvent(new CustomEvent('scroll'));
       }
     };
 
