@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { PHOTOS_URL } from './config';
 
 const usePhotosApi = (
@@ -18,16 +19,17 @@ const usePhotosApi = (
       setIsError(false);
 
       try {
-        const response = await fetch(
+        const {
+          data: { results, nextPage },
+        } = await axios.get(
           `${PHOTOS_URL}/${category}/${sorting}/${sortingBy}/${page}`,
         );
-        const json = await response.json();
 
         page === 1
-          ? setPhotos([...json.results])
-          : setPhotos(photos => [...photos, ...json.results]);
+          ? setPhotos([...results])
+          : setPhotos(photos => [...photos, ...results]);
 
-        setNextPage(json.nextPage);
+        setNextPage(nextPage);
       } catch (e) {
         console.log('Error: ', e);
         setIsError(true);

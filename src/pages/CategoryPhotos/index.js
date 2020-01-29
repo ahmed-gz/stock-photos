@@ -31,6 +31,7 @@ const CategoryPhotos = () => {
   }, [bottomIsReached, nextPage, photos, isLoading]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     reLoadPage();
     setCurrentCategory(id);
   }, [id]);
