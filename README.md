@@ -2,6 +2,14 @@
 
 Quality Stock Images app built with React, create-react-app, react-router, material-ui and axios.
 
+## Key patterns
+
+I used following patterns to experiment and have fun with in order to find tradeoffs and limitations:
+
+- State Management layer using Context API and react hooks(magic combination)
+- API call layer built with custom hooks
+- Cancellation mechanism for API requests(still experimental work in progress on a separate branch <a href="https://github.com/ahmed-gz/stock-photos/tree/exp/api-request-cancel">exp/api-request-cancel</a>)
+
 ## Available Scripts
 
 In the project directory, you can run:
