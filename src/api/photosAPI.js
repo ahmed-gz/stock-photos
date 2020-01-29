@@ -31,8 +31,13 @@ const usePhotosApi = (
 
         setNextPage(nextPage);
       } catch (e) {
-        console.log('Error: ', e);
-        setIsError(true);
+        if (axios.isCancel(e)) {
+          // set flag to handle request canceling seperately
+          console.log('api canceled');
+        } else {
+          console.log('api errored', e);
+          setIsError(true);
+        }
       } finally {
         setIsLoading(false);
         window.dispatchEvent(new CustomEvent('scroll'));

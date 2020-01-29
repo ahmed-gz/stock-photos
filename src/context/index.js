@@ -8,6 +8,8 @@ export const Context = createContext({
     setCurrentCategory: categoryId => categoryId,
     loadMore: () => {},
     reLoadPage: () => {},
+    addCancelToken: token => token,
+    cancelPendingRequests: () => {},
   },
 });
 

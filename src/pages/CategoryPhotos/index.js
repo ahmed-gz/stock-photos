@@ -20,7 +20,12 @@ const CategoryPhotos = () => {
   const [bottomIsReached] = useInfiniteScroll(200);
   const {
     state: { currentCategory, currentPage },
-    actions: { setCurrentCategory, reLoadPage, loadMore },
+    actions: {
+      setCurrentCategory,
+      reLoadPage,
+      loadMore,
+      cancelPendingRequests,
+    },
   } = context;
   const [photos, isLoading, isError, nextPage] = usePhotosApi(id, currentPage);
 
@@ -32,6 +37,7 @@ const CategoryPhotos = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    cancelPendingRequests();
     reLoadPage();
     setCurrentCategory(id);
   }, [id]);
