@@ -1,5 +1,6 @@
 {
   "name": "stock-photos",
+  "homepage": "https://ahmed-gz.github.io/stock-photos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.1",
     "classnames": "^2.2.6",
+    "gh-pages": "^2.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -24,6 +26,8 @@
     "lint": "eslint src/**/*.js --fix",
     "test": "react-scripts test --watchAll=false",
     "test:watch": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
