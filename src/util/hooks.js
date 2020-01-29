@@ -6,7 +6,7 @@ export const useInfiniteScroll = threshold => {
   useEffect(() => {
     const onScroll = () =>
       setBottomIsReached(
-        window.innerHeight + window.scrollY >=
+        window.innerHeight + window.pageYOffset >=
           document.body.offsetHeight - threshold,
       );
 
