@@ -1,0 +1,34 @@
+{
+  "files": {
+    "static/js/0.0b7106b7.chunk.js": "/stock-photos/static/js/0.0b7106b7.chunk.js",
+    "static/js/0.0b7106b7.chunk.js.map": "/stock-photos/static/js/0.0b7106b7.chunk.js.map",
+    "static/js/1.5e79997b.chunk.js": "/stock-photos/static/js/1.5e79997b.chunk.js",
+    "static/js/1.5e79997b.chunk.js.map": "/stock-photos/static/js/1.5e79997b.chunk.js.map",
+    "main.css": "/stock-photos/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/stock-photos/static/js/main.bf7a0b42.chunk.js",
+    "main.js.map": "/stock-photos/static/js/main.bf7a0b42.chunk.js.map",
+    "runtime-main.js": "/stock-photos/static/js/runtime-main.b6cbe561.js",
+    "runtime-main.js.map": "/stock-photos/static/js/runtime-main.b6cbe561.js.map",
+    "static/js/4.790ca199.chunk.js": "/stock-photos/static/js/4.790ca199.chunk.js",
+    "static/js/4.790ca199.chunk.js.map": "/stock-photos/static/js/4.790ca199.chunk.js.map",
+    "static/js/5.a13db4e2.chunk.js": "/stock-photos/static/js/5.a13db4e2.chunk.js",
+    "static/js/5.a13db4e2.chunk.js.map": "/stock-photos/static/js/5.a13db4e2.chunk.js.map",
+    "static/js/6.3a957528.chunk.js": "/stock-photos/static/js/6.3a957528.chunk.js",
+    "static/js/6.3a957528.chunk.js.map": "/stock-photos/static/js/6.3a957528.chunk.js.map",
+    "static/js/7.19999511.chunk.js": "/stock-photos/static/js/7.19999511.chunk.js",
+    "static/js/7.19999511.chunk.js.map": "/stock-photos/static/js/7.19999511.chunk.js.map",
+    "static/js/8.d2989f78.chunk.js": "/stock-photos/static/js/8.d2989f78.chunk.js",
+    "static/js/8.d2989f78.chunk.js.map": "/stock-photos/static/js/8.d2989f78.chunk.js.map",
+    "index.html": "/stock-photos/index.html",
+    "precache-manifest.01d042592ce7405e760450815885e07c.js": "/stock-photos/precache-manifest.01d042592ce7405e760450815885e07c.js",
+    "service-worker.js": "/stock-photos/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/stock-photos/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/4.790ca199.chunk.js.LICENSE": "/stock-photos/static/js/4.790ca199.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6cbe561.js",
+    "static/js/4.790ca199.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.bf7a0b42.chunk.js"
+  ]
+}
