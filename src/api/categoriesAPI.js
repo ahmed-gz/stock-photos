@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { CATEGORIES_URL } from './config';
 
 const useCategoriesApi = () => {
@@ -11,10 +12,11 @@ const useCategoriesApi = () => {
     setIsError(false);
 
     try {
-      const response = await fetch(CATEGORIES_URL);
-      const json = await response.json();
+      const {
+        data: { categories },
+      } = await axios.get(CATEGORIES_URL);
 
-      setCategories(json.categories);
+      setCategories(categories);
     } catch (e) {
       console.log('Error: ', e);
       setIsError(true);
