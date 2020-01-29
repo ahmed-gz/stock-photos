@@ -43,15 +43,6 @@ const CategoryPhotos = () => {
         <Typography color="textPrimary" component="h1" className={classes.h1}>
           {currentCategory} Photos
         </Typography>
-        <Button
-          variant="contained"
-          size="large"
-          color="secondary"
-          onClick={reLoadPage}
-          disabled={isLoading || currentPage === 1}
-        >
-          ReLoad
-        </Button>
         {isError && (
           <Alert severity="error">
             Something went wrong, please try again!
