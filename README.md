@@ -2,6 +2,12 @@
 
 Quality Stock Images app built with React, create-react-app, react-router, material-ui and axios.
 
+<p align="center">
+  <a href="https://ahmed-gz.github.io/stock-photos" target="_blank">
+    Live Demo
+  </a>
+</p>
+
 ## To know
 
 I used following patterns to experiment and have fun with in order to find tradeoffs and limitations:
